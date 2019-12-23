@@ -1,0 +1,48 @@
+#server:
+#  port: 8081
+#
+#spring:
+#  application:
+#    name: index-service
+#
+#  rabbitmq:
+#    host: 106.13.216.239
+#    virtual-host: /zs
+#    username: zs
+#    password: 123
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8888/eureka/,http://localhost:8866/eureka/
+#    registry-fetch-interval-seconds: 30
+#
+##配置调用product-service服务采用的负载均衡策略
+#PRODUCT-SERVICE:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#
+##熔断器
+#feign:
+#  hystrix:
+#    enabled: true
+##暴露所有的健康监控节点，这样才能实时获取到节点的信息
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#
+##自定义熔断器数值
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 1000 #默认的连接超时时间1秒,若1秒没有返回数据,自动的触发降级逻辑
+#      circuitBreaker:
+#        enabled: true
+#        requestVolumeThreshold: 5 #触发熔断的最小请求次数，默认20
+#        errorThresholdPercentage: 10 #触发熔断的失败请求最小占比，默认50%
+#        sleepWindowInMilliseconds: 20000 #熔断多少秒后去尝试请求，默认是5S

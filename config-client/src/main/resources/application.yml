@@ -1,0 +1,15 @@
+server:
+  port: 9910
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+spring:
+  rabbitmq:
+    host: 106.13.216.239
+    virtual-host: /zs
+    username: zs
+    password: 123

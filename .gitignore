@@ -1,0 +1,12 @@
+# Project exclude paths
+/api-gateway-service/target/
+/api-zuul-server/target/
+/common-service/target/
+/config-client/target/
+/config-server/target/
+/eureka-service/target/
+/hystrix-turbine/target/
+/index-service/target/
+/product-service/target/
+/user-service/target/
+/zipkin-service/target/
